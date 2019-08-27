@@ -1,0 +1,6 @@
+# elasticsearch配置
+elasticsearch:
+  cluster:
+    name: liyg_app
+  node:
+    path: 127.0.0.1:9300,127.0.0.1:9400

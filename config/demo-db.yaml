@@ -1,0 +1,23 @@
+# 数据源相关配置
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: root
+    password: 123456
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 3
+      maximum-pool-size: 5000
+      pool-name: ${spring.application.name}-CP
+      idle-timeout: 20000
+      leakDetectionThreshold: 0
+
+# Mybatis相关配置      
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+        default-fetch-size: 100
+        default-statement-timeout: 30
+    mapperLocations: classpath*:com/liyghting/*/mapper/*.xml

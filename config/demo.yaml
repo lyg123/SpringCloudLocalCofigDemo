@@ -1,0 +1,71 @@
+spring:
+  output:
+    ansi:
+      enabled: detect 
+  sleuth:  
+    sampler:  
+      percentage: 1
+    rxjava:
+      schedulers:
+        hook:
+          enabled: false
+
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  messages:
+    basename: i18n/messages
+    cache-seconds: -1
+    encoding: utf-8
+  # actuator登录认证配置
+  security:
+    user:
+      name: admin
+      password: admin
+# Ribbon相关配置
+ribbon:
+  eager-load:
+    enabled: true
+    clients: ord
+  ReadTimeout: 10000
+  ConnectTimeout: 5000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+  OkToRetryOnAllOperations: true
+  
+
+
+# 开启Sentinel的熔断
+feign:
+  sentinel:
+    enabled: true
+
+
+      
+management:
+
+  security:
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+server:
+  port: 9090
+  context-path: /
+  compression:
+    enabled: true
+    
+  
+
+# 日志相关配置
+logging:
+  file: ${spring.application.name}
+  level:
+    ROOT: info
+    com.alibaba.nacos.client.naming: warn

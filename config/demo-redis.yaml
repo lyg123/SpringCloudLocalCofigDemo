@@ -1,0 +1,21 @@
+# redis配置
+redis:
+  use:
+    pwd:
+      flag: 1   # redis 访问是否使用密码。0:不使用;1:使用
+  auth: xxx   # redis访问密码
+  master:
+    name: LIYG_REDIS_CLUSTER01   # redis master名称
+  sentinel1: 127.0.0.1:8010   # 哨兵1 IP
+  sentinel2: 127.0.0.1:8011   # 哨兵2 IP
+  sentinel3: 127.0.0.1:8012   # 哨兵3 IP
+  
+# jedis连接池配置
+jedis:
+  pool: 
+    maxActive: 1024 # 池中对象的最大数量，默认值是8，如果是负值表示没限制
+    maxIdle: 2000 # 池中空闲的对象的最大数量，默认值是8，如果是负值表示没限制
+    maxWait: 10000  # 当池中对象达到上限以后，等待获取可用对象的时间，单位毫秒，超时抛出NoSuchElementException异常
+    timeout: 5000  # 获取连接的超时 单位毫秒
+    evict_time: 30  # 驱逐对象的时间设置，即空闲多长时间会被驱逐出池里, 单位分钟
+    evict_interval: 30  # 驱逐线程扫描间隔，单位秒

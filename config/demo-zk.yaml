@@ -1,0 +1,8 @@
+####zookeeper相关配置####
+zookeeper:
+  address: 127.0.0.1:2181
+  exponential: 
+    backoff: 
+      retry: 
+        initial: 1000
+        count: 10

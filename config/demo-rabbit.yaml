@@ -1,0 +1,16 @@
+spring:
+  rabbitmq: 
+   
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+  cloud: 
+    stream:
+      default:
+        contentType: application/json
+        group: liyg-consumer-group
+        consumer:
+          maxAttempts: 5
+      defaultBinder: rabbit
+      bindings:
+        
