@@ -1,0 +1,2 @@
+# SpringCloudLocalCofigDemo
+SpringCloud应用配置支持本地或者远程Nacos服务加载
